@@ -1,0 +1,162 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 2vw;
+}
+
+body {
+    background-color: black;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.slider-radio-button {
+    display: none;
+}
+
+.slider__images {
+    display: flex;
+    margin-bottom: 3rem;
+    overflow: hidden;
+}
+
+.slider__image-container {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    opacity: 0;
+    transition: 1s;
+}
+
+.slider__image-container:nth-of-type(1) {
+    background-image: url('./img/gomeo-mem.jpg');
+}
+
+.slider__image-container:nth-of-type(2) {
+    background-image: url('./img/not-photoshop.jpg');
+}
+
+.slider__image-container:nth-of-type(3) {
+    background-image: url('./img/not-so-comfort-sleeping.jpg');
+}
+
+.slider__image-container:nth-of-type(4) {
+    background-image: url('./img/excel-inserts-wrong-date.jpg');
+}
+
+#r1:checked ~ .slider .slider__image-container:nth-of-type(1),
+#r2:checked ~ .slider .slider__image-container:nth-of-type(2),
+#r3:checked ~ .slider .slider__image-container:nth-of-type(3),
+#r4:checked ~ .slider .slider__image-container:nth-of-type(4) {
+    opacity: 1;
+    order: -1;
+}
+
+.slider__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.slider__image-captions {
+    display: flex;
+    flex-direction: column;
+    height: 1.75rem;
+    overflow: hidden;
+}
+
+.slider__image-caption {
+    color: white;
+    font-size: 1.5rem;
+    opacity: 1;
+    transition: 1s;
+}
+
+#r1:not(:checked) ~ .slider .slider__image-caption:nth-of-type(1),
+#r2:not(:checked) ~ .slider .slider__image-caption:nth-of-type(2),
+#r3:not(:checked) ~ .slider .slider__image-caption:nth-of-type(3),
+#r4:not(:checked) ~ .slider .slider__image-caption:nth-of-type(4) {
+    order: 10;
+    opacity: 0;
+}
+
+.slider__controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slider__control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    border: 0.5rem solid transparent;
+    border-radius: 50%;
+	cursor: pointer;
+}
+
+.slider__control-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1rem;
+    height: 1rem;
+    border: 0.2rem solid cyan;
+    border-radius: 50%;
+    background-color: cyan;
+    transition: 0.5s;
+}
+
+.slider__control:hover .slider__control-center {
+    background-color: white;
+    border-color: white;
+    transform: scale(1.1);
+}
+
+.slider__control:active .slider__control-center {
+    background-color: brown;
+    border-color: brown;
+}
+
+#r1:checked ~ .slider .slider__control:nth-of-type(1) .slider__control-center,
+#r2:checked ~ .slider .slider__control:nth-of-type(2) .slider__control-center,
+#r3:checked ~ .slider .slider__control:nth-of-type(3) .slider__control-center,
+#r4:checked ~ .slider .slider__control:nth-of-type(4) .slider__control-center {
+    background-color: transparent;
+}
+
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 4vw;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .slider__images {
+        margin-bottom: 1rem;
+    }
+
+    .slider__bottom {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 1rem;
+    }
+}
