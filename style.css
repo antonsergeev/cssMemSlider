@@ -10,6 +10,7 @@ body {
 
 .container {
     width: 90%;
+    padding: 2rem;
 }
 
 .slider-radio-button {
@@ -18,17 +19,38 @@ body {
 
 .slider__images {
     display: flex;
+    margin-bottom: 2rem;
     overflow: hidden;
 }
 
 .slider__image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 25%;
+}
+
+.slider__image {
+    width: 100%;
 }
 
 .slider__bottom {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+}
+
+.slider__image-caption {
+    color: white;
+    opacity: 1;
+    transition: 1s;
+}
+
+#r1:not(:checked) ~ .slider .slider__image-caption:nth-of-type(1),
+#r2:not(:checked) ~ .slider .slider__image-caption:nth-of-type(2),
+#r3:not(:checked) ~ .slider .slider__image-caption:nth-of-type(3),
+#r4:not(:checked) ~ .slider .slider__image-caption:nth-of-type(4) {
+    opacity: 0;
 }
 
 .slider__controls {
@@ -41,4 +63,5 @@ body {
     width: 2rem;
     height: 2rem;
     background-color: red;
+	cursor: pointer;
 }
