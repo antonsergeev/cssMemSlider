@@ -3,3 +3,42 @@
     margin: 0;
     padding: 0;
 }
+
+body {
+    background-color: black;
+}
+
+.container {
+    width: 90%;
+}
+
+.slider-radio-button {
+    display: none;
+}
+
+.slider__images {
+    display: flex;
+    overflow: hidden;
+}
+
+.slider__image-container {
+    width: 25%;
+}
+
+.slider__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.slider__controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.slider__control {
+    width: 2rem;
+    height: 2rem;
+    background-color: red;
+}
