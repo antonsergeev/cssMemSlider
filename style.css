@@ -97,7 +97,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 0.5rem;
 }
 
 .slider__control {
@@ -120,13 +119,23 @@ body {
     border: 0.2rem solid cyan;
     border-radius: 50%;
     background-color: cyan;
-    transition: 1s;
+    transition: 0.5s;
 }
 
-#r1:checked ~ .slider .slider__control-center:nth-of-type(1),
-#r2:checked ~ .slider .slider__control-center:nth-of-type(2),
-#r3:checked ~ .slider .slider__control-center:nth-of-type(3),
-#r4:focus ~ .slider .slider__control-center:nth-of-type(4) {
+.slider__control:hover .slider__control-center {
+    background-color: white;
+    border-color: white;
+}
+
+.slider__control:active .slider__control-center {
+    background-color: brown;
+    border-color: brown;
+}
+
+#r1:checked ~ .slider .slider__control:nth-of-type(1) .slider__control-center,
+#r2:checked ~ .slider .slider__control:nth-of-type(2) .slider__control-center,
+#r3:checked ~ .slider .slider__control:nth-of-type(3) .slider__control-center,
+#r4:checked ~ .slider .slider__control:nth-of-type(4) .slider__control-center {
     background-color: transparent;
 }
 
