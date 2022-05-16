@@ -125,6 +125,7 @@ body {
 .slider__control:hover .slider__control-center {
     background-color: white;
     border-color: white;
+    transform: scale(1.1);
 }
 
 .slider__control:active .slider__control-center {
